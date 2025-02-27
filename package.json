@@ -1,0 +1,20 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/cicekl/To-Do-List#readme",
+  "bugs": {
+    "url": "https://github.com/cicekl/To-Do-List/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cicekl/To-Do-List.git"
+  },
+  "license": "ISC",
+  "author": "Lorena Čiček",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
