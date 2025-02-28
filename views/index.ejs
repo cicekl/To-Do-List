@@ -1,0 +1,39 @@
+<%- include("../views/partials/header.ejs") %>
+
+<main>
+  <div class="inputContainer">
+      <div>
+        <h1>To-Do List</h1>
+      </div>
+  
+    <div>
+      <form action="/" method="POST">
+      <div class="input">
+        <input type="text" name="task" id="input-txt" placeholder="Write your task here">
+        <button id="btnAdd" type="submit">Add</button> 
+      </div>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="taskPreview">
+    <% if(locals.tasks) { %> 
+      <div class="list">
+        <ul>
+          <% for(let i=0;i<tasks.length;i++) { %>
+            <li>
+              <input type="checkbox">
+              <div class="taskText"><%= tasks[i] %></div>              
+              <span>X</span> 
+            </li>
+        <% } %>
+        </ul>
+      </div>
+    <% }else { %> 
+      <p>No tasks to show.</p> 
+    <% } %>
+  </div>
+
+
+<%- include("../views/partials/footer.ejs") %>
