@@ -23,15 +23,19 @@
         <ul>
           <% for(let i=0;i<tasks.length;i++) { %>
             <li>
-              <input type="checkbox">
-              <div class="taskText"><%= tasks[i] %></div>              
-              <span>X</span> 
+              <input type="checkbox" class="task-checkbox" data-id="<%= i %>">
+              <div class="taskText"><%= tasks[i].text %></div> 
+              
+              <form action="/delete" method="POST">
+                  <input type="hidden" name="index" value="<%= i %>">
+                  <span class="deleteBtn" onclick="this.parentElement.submit();">X</span> 
+                </form>
             </li>
         <% } %>
         </ul>
       </div>
     <% }else { %> 
-      <p>No tasks to show.</p> 
+      <li>No tasks to show.</li>
     <% } %>
   </div>
 

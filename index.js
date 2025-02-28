@@ -16,9 +16,18 @@ app.get("/", (req,res) => {
 app.post("/", (req,res) => {
   const task = req.body["task"];
   if(task.trim() !== "") {
-  tasks.push(task); 
+  tasks.push({text: task}); 
 }
   res.redirect("/");
 });
+
+app.post("/delete", (req, res) => {
+  const taskIndex = parseInt(req.body.index, 10);
+  if (!isNaN(taskIndex) && taskIndex >= 0 && taskIndex < tasks.length) {
+    tasks.splice(taskIndex, 1);
+  }
+  res.redirect("/");
+});
+
 
 app.listen(port);
